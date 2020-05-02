@@ -6,6 +6,13 @@
       <navbar-cmp></navbar-cmp>
       <div id="content" class="content">
         <!-- Web Components go here -->
+        <ng-template #loadingClientA>Loading Client A ...</ng-template>
+        <ng-template #errorClientA>Error failed loading Client A</ng-template>
+        <client-a *axLazyElement="'/client-a/main.js'; loadingTemplate:loadingClientA; errorTemplate:errorClientA"></client-a>
+
+        <ng-template #loadingClientB>Loading Client A ...</ng-template>
+        <ng-template #errorClientB>Error failed loading Client B</ng-template>
+        <client-b *axLazyElement="'/client-b/main.js'; loadingTemplate:loadingClientB; errorTemplate:errorClientB"></client-b>
       </div>
   </div>
 </div>
