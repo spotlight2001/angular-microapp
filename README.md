@@ -12,23 +12,56 @@ This example consists of three Angular projects that demonstrate how to use Web 
 npm install
 ```
 
-## Standalone
-
-For debugging and testing, you can start each of those projects individually. Please note that the shell will throw some exceptions when doing so because it does not find the micro apps that are expected in an sub folder for the sake of simplicity.
-
-Use one of the following commands for this:
-
-```
-ng serve --project shell --open
-ng serve --project client-a --open
-ng serve --project client-b --open
-```
-
 ## Everything together
 
 For using everything together, you have to build the example and run it:
 
 ```
-npm run build
-npm start
+npm run shell
+npm run client-a
+npm run client-b
 ```
+
+in browser:
+```
+http://localhost:8200
+```
+
+# Open issues?
+
+## Debugging
+
+In "serve" mode, how can I include js.map
+
+## JWT
+
+How to create a securityContext in web component to use the JWT without manual handover
+
+Will the cookie be used in PA environment?
+
+How to deal with that on localhost? static JWT? (on FTZ/DEV expired JWTs are ok)
+
+# History
+
+## Angular Update v6 -> v7
+
+```
+npx ng update @angular/cli@v7-lts @angular/core@v7-lts @angular-extensions/elements@7x-versions
+```
+
+## Update ngx-build-plus from v1.1.0 -> angular 7 compatible version
+
+remove ngx-build-plus from package.json, delete node_modules
+
+```
+npx ng add ngx-build-plus@^7
+```
+
+```
+npx ng add @angular-devkit/build-angular@v7-lts
+```
+
+update failed for me
+
+
+npm ls ...

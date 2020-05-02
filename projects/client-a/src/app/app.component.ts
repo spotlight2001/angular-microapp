@@ -12,7 +12,7 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent implements OnInit {
 
-  @Input('state') 
+  @Input('state')
   set state(state: string) {
       console.debug('client-a received state', state);
   }
@@ -26,16 +26,16 @@ export class AppComponent implements OnInit {
   ngOnInit() {
 
     this.router.initialNavigation(); // Manually triggering initial navigation for @angular/elements ?
-    
+
     // Standalone mode
     if (environment.standalone) {
       this.router.navigate(['/client-a/page1']);
     }
 
     // just for demonstration!
-    setTimeout(() => { 
+    setTimeout(() => {
       this.message.next('client a initialized!');
     }, 2000);
-    
+
   }
 }
