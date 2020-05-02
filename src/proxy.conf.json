@@ -1,0 +1,18 @@
+{
+  "/client-a": {
+    "target": "http://localhost:8201",
+    "secure": false,
+    "pathRewrite": {
+      "^/client-a": ""
+    },
+    "logLevel": "debug"
+  },
+  "/client-b": {
+    "target": "http://localhost:8202",
+    "secure": false,
+    "pathRewrite": {
+      "^/client-b": ""
+    },
+    "logLevel": "debug"
+  }
+}
