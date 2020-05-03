@@ -14,7 +14,7 @@ npm install
 
 ## Everything together
 
-For using everything together, you have to build the example and run it:
+on development:
 
 ```
 npm run shell
@@ -26,6 +26,13 @@ in browser:
 ```
 http://localhost:8200
 ```
+
+with standalone server:
+```
+npm run build
+npm start
+```
+
 
 # Open issues?
 

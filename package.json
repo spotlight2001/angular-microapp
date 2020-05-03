@@ -9,7 +9,7 @@
     "build:clients": "npm run build:client-a && npm run build:client-b",
     "build:client-a": "ng build --prod --project client-a --output-hashing none --vendor-chunk false --output-path dist/shell/client-a",
     "build:client-b": "ng build --prod --project client-b --output-hashing none --vendor-chunk false --output-path dist/shell/client-b",
-    "build:shell": "ng build --project shell",
+    "build:shell": "ng build --prod --project shell",
     "build:clients:webpack:old-solution": "webpack",
     "test": "ng test",
     "lint": "ng lint",
@@ -17,9 +17,9 @@
     "shell": "npm run serve:shell",
     "client-a": "npm run serve:client-a",
     "client-b": "npm run serve:client-b",
-    "serve:shell": "ng serve --project shell --port 8200 --proxyConfig src/proxy.conf.json",
-    "serve:client-a": "ng serve --project client-a --port 8201 --single-bundle --source-map",
-    "serve:client-b": "ng serve --project client-b --port 8202 --single-bundle --source-map"
+    "serve:shell": "ng serve --project shell --port 8200 --proxyConfig src/proxy.conf.json --serve-path=portal --base-href=.",
+    "serve:client-a": "ng serve --project client-a --port 8201 --single-bundle --serve-path=client-a",
+    "serve:client-b": "ng serve --project client-b --port 8202 --single-bundle --serve-path=client-b"
   },
   "private": true,
   "dependencies": {
