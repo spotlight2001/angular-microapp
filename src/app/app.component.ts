@@ -10,7 +10,8 @@ import { StateService } from './state.service';
 })
 export class AppComponent {
 
-  constructor(private stateService: StateService) {
+  data = {
+    "test": true
   }
 
   config = {
@@ -23,9 +24,11 @@ export class AppComponent {
       loaded: false,
       path: 'client-b/main.js',
       element: 'client-b'
-    },
-
+    }
   };
+
+  constructor(private stateService: StateService) {
+  }
 
   ngOnInit() {
     //this.load('client-a');
@@ -39,17 +42,6 @@ export class AppComponent {
 
     const content = document.getElementById('content');
 
-
-
-
-
-
-
-
-
-
-
-
     const script = document.createElement('script');
     script.src = configItem.path;
     content.appendChild(script);
@@ -57,30 +49,15 @@ export class AppComponent {
     const element: HTMLElement = document.createElement(configItem.element);
     content.appendChild(element);
 
-
-
-
-
-
-
-
-
-
-
-
-
     element.addEventListener('message', msg => this.handleMessage(msg));
     element.setAttribute('state', 'init');
 
     script.onerror = () => console.error(`error loading ${configItem.path}`);
 
-
     this.stateService.registerClient(element);
-
   }
 
   handleMessage(msg): void {
-    console.debug('shell received message: ', msg.detail);
+    console.debug('shell received message: ', JSON.stringify(msg));
   }
-
 }

@@ -12,6 +12,11 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent implements OnInit {
 
+  @Input('data')
+  set data(data) {
+      console.debug('client-a received data', JSON.stringify(data))
+  }
+
   @Input('state')
   set state(state: string) {
       console.debug('client-a received state', state);
@@ -24,6 +29,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('data=' + this.data)
+    console.log('state=' + this.state)
 
     this.router.initialNavigation(); // Manually triggering initial navigation for @angular/elements ?
 
