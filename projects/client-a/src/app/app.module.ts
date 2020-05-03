@@ -42,7 +42,7 @@ import { PushPipe } from './push.pipe';
     ClientAWidgetComponent
   ]
 })
-export class AppModule { 
+export class AppModule {
 
   constructor(private injector: Injector) {
   }

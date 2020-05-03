@@ -37,7 +37,7 @@ import { CoreComponent } from './core/core.component';
     AppComponent
   ]
 })
-export class AppModule { 
+export class AppModule {
   constructor(private injector: Injector) {
   }
 

@@ -5,6 +5,9 @@
   <div class="main-panel">
       <navbar-cmp></navbar-cmp>
       <div id="content" class="content">
+        <!-- components directly in app shell -->
+        <router-outlet></router-outlet>
+
         <!-- Web Components go here -->
         <ng-template #loadingClientA>Loading Client A ...</ng-template>
         <ng-template #errorClientA>Error failed loading Client A</ng-template>
