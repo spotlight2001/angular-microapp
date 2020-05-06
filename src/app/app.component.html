@@ -1,21 +1,23 @@
 <div class="wrapper">
   <div class="sidebar" data-background-color="white" data-active-color="danger">
-      <sidebar-cmp></sidebar-cmp>
+    <sidebar-cmp></sidebar-cmp>
   </div>
   <div class="main-panel">
-      <navbar-cmp></navbar-cmp>
-      <div id="content" class="content">
-        <!-- components directly in app shell -->
-        <router-outlet></router-outlet>
+    <navbar-cmp></navbar-cmp>
+    <div id="content" class="content">
+      <!-- components directly in app shell -->
+      <router-outlet></router-outlet>
 
-        <!-- Web Components go here -->
-        <ng-template #loadingClientA>Loading Client A ...</ng-template>
-        <ng-template #errorClientA>Error failed loading Client A</ng-template>
-        <client-a *axLazyElement="'/client-a/main.js'; loadingTemplate:loadingClientA; errorTemplate:errorClientA" [state]="'some state'" (message)="handleMessage($event)"></client-a>
+      <!-- Web Components go here -->
+      <ng-template #loadingClientA>Loading Client A ...</ng-template>
+      <ng-template #errorClientA>Error failed loading Client A</ng-template>
+      <client-a *axLazyElement="'/client-a/main.js'; loadingTemplate:loadingClientA; errorTemplate:errorClientA"
+        [data]="data" [state]="'some state'" (message)="handleMessage($event)"></client-a>
 
-        <ng-template #loadingClientB>Loading Client A ...</ng-template>
-        <ng-template #errorClientB>Error failed loading Client B</ng-template>
-        <client-b *axLazyElement="'/client-b/main.js'; loadingTemplate:loadingClientB; errorTemplate:errorClientB" [state]="'some state'" (message)="handleMessage($event)"></client-b>
-      </div>
+      <ng-template #loadingClientB>Loading Client A ...</ng-template>
+      <ng-template #errorClientB>Error failed loading Client B</ng-template>
+      <client-b *axLazyElement="'/client-b/main.js'; loadingTemplate:loadingClientB; errorTemplate:errorClientB"
+        [data]="data" [state]="'some state'" (message)="handleMessage($event)"></client-b>
+    </div>
   </div>
 </div>

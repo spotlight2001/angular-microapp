@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { element } from 'protractor';
 import { Component } from '@angular/core';
 import { Subject } from 'rxjs';
@@ -10,9 +11,7 @@ import { StateService } from './state.service';
 })
 export class AppComponent {
 
-  data = {
-    "test": true
-  }
+  data
 
   config = {
     "client-a": {
@@ -27,12 +26,14 @@ export class AppComponent {
     }
   };
 
-  constructor(private stateService: StateService) {
+  constructor(private stateService: StateService, private router : ActivatedRoute) {
   }
 
   ngOnInit() {
     //this.load('client-a');
     //this.load('client-b');
+
+    this.router.fragment.subscribe(url => this.data = url)
   }
 
   load(name: string): void {
